@@ -1,23 +1,22 @@
-# YouTube Thumbnail Downloader
+# YouTube Thumbnail & Transcript Generator
 
-A simple web application built with Flask that allows users to download thumbnails from YouTube videos in different qualities.
-
-**Try the application out here**
-
-(Youtube Thumbnail Downloader)[]
-
+A Flask web application that allows users to:
+- Download YouTube video thumbnails in multiple qualities
+- Get complete video transcription
+- Download transcription as text file
 
 ## Prerequisites
 - Python 3.7+
 - pip (Python package installer)
 - YouTube API Key
+- Internet connection
 
 ## Installation
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/youtube-thumbnail-downloader.git
-cd youtube-thumbnail-downloader
+git clone https://github.com/yourusername/youtube-tools.git
+cd youtube-tools
 ```
 2. Install required packages
 ```
@@ -44,12 +43,15 @@ python app.py
     - Default (120x90)
     - High Quality (480x360)
     - Maximum Resolution (1280x720)
+4. Click "Get Transcription" button to get the video transcription
+5. Click "Download Transcription" button to download the transcription as a text file (work in progress)
+
 ## Features
-- Support upport for multiple thumbnail qualities
+- Support for multiple thumbnail qualities
 - Direct download functionality
 - Simple and intuitive interface
 - Responsive design
-
+- Video transcription and download functionality
 
 ## Contributing
 
