@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Video Transcription Generator</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .thumbnails {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .thumbnail-container {
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 800px;
+    }
+
+    .thumbnail-item {
+        margin-bottom: 40px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #ff0000;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 10px auto;
+        display: block;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #cc0000;
+    }
+    .transcript-container {
+        max-width: 800px;
+        margin: 20px auto;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .transcript-line {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+    }
+
+    .timestamp {
+        flex: 0 0 100px;
+        color: #666;
+        font-size: 0.9em;
+    }
+
+    .text {
+        flex: 1;
+        text-align: left;
+        margin-left: 20px;
+    }
+    </style>
+</head>
+<body>
+
+
+    <h1>
+        YouTube Video Transcription Generator
+    </h1>
+    <h2 style="color: #bbb4b4;">
+        by Amaan
+    </h2>
+
+    <form method="POST">
+        <input type="text" name="link" placeholder="Enter YouTube URL">
+        <input type="submit" value="Get Transcription">
+    </form>
+    {% if thumbnails %}
+    <div class="thumbnails">
+        <h3>High Quality Thumbnail:</h3>
+        <img src="{{ thumbnails.high }}" alt="High quality thumbnail">
+        <a href="{{ url_for('download_image', quality='high') }}">
+            <button>Download Thumbnail</button>
+        </a>
+    </div>
+    {% endif %}
+
+
+    {% if transcript %}
+    <div class="transcript-container">
+        <h3>Transcription:</h3>
+        {% for line in transcript %}
+        <div class="transcript-line">
+            <div class="timestamp">{{ "%.2f"|format(line.start) }}s</div>
+            <div class="text">{{ line.text }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <hr>
+
+
+   
+   
+</body>
+</html>
