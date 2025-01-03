@@ -15,8 +15,8 @@ A Flask web application that allows users to:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/youtube-tools.git
-cd youtube-tools
+git clone https://github.com/AmaanBilwar/youtube-transcription-generator
+cd youtube-transcription-generator
 ```
 2. Install required packages
 ```
@@ -37,25 +37,33 @@ python app.py
 
 ## Usage
 
-1. Paste a YouTube video URL into the input field
-2. Click "Get Thumbnails" button
-3. Three thumbnail qualities will be displayed:
-    - Default (120x90)
-    - High Quality (480x360)
-    - Maximum Resolution (1280x720)
-4. Click "Get Transcription" button to get the video transcription
-5. Click "Download Transcription" button to download the transcription as a text file (work in progress)
+Thumbnail:
+1. Start the application:
+Open browser and go to: `http://localhost:5000`
+
+2. Paste YouTube URL
+
+Transcription:
+
+Automatically generates complete video transcript
+View timestamp-synchronized text
+Download full transcript as text file
 
 ## Features
-- Support for multiple thumbnail qualities
-- Direct download functionality
-- Simple and intuitive interface
-- Responsive design
-- Video transcription and download functionality
 
-## Contributing
+1. Thumbnails:
 
-1. Fork the repository
-2. Create a new branch
-3. Make your changes
-4. Submit a pull request
+    - Paste YouTube URL
+    - View thumbnails in high resolution
+    - Download with one click
+2. Transcription:
+    - Automatically generates complete video transcript
+    - View timestamp-synchronized text
+    - Download full transcript as text file(work in progress)
+
+
+## Technologies
+- Flask
+- YouTube Data API
+- YouTube Transcript API
+- Python Requests
