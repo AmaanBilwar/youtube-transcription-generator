@@ -1,6 +1,6 @@
 ## Still a work in progress btw (im not a frontend guy)
 
-# YouTube Thumbnail & Transcript Generator
+# YouTube Transcript Generator
 
 A Flask web application that allows users to:
 - Download YouTube video thumbnails in multiple qualities
